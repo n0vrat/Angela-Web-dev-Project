@@ -2,4 +2,4 @@
 
 A repository for my progress in web development.
 
-                                    - Novrat
+A timeline progress on my web development project. - n0vrat
