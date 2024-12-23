@@ -25,7 +25,7 @@ li[value="4"]{
   text-align: center;
 }
 
-.playwrite-nl-guides-regular {
+#playwrite-nl-guides-regular {
   font-family: "Playwrite NL Guides", cursive;
   font-weight: 400;
   font-style: normal;
