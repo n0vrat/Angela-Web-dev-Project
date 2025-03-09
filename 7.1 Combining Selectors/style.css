@@ -3,14 +3,22 @@ h1, h2 {
     color: blueviolet;
 }
 
+/* parent > child */
 .box > .done {
     color: firebrick;
 }
 
+/* ancestor descendant */
 .box li {
     color: blue;
 }
 
+/* chaining */
 li.done {
     color: seagreen;
+}
+
+/* combining combiners */
+ul p.done {
+    font-size: 0.5rem;
 }
