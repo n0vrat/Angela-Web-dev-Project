@@ -5,12 +5,24 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function(){
     
     var buttonInnerHTML = this.innerHTML;
     playSound(buttonInnerHTML);
+    animateButton(buttonInnerHTML);
+    // setTimeout(() => {
+    //     // Code to be executed after the delay
+    //     animateRemove(buttonInnerHTML);
+    //   }, 100);
+    
 });
 
 }
 
 document.addEventListener("keydown", function(event){
     playSound(event.key);
+    animateButton(event.key);
+    // setTimeout(() => {
+    //     // Code to be executed after the delay
+    //     animateRemove(event.key);
+    //   }, 100);
+    
 })
 
 
@@ -56,3 +68,17 @@ function playSound(key){
             break;
     }
 }
+
+function animateButton(currentKey){
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(() => {
+        // Code to be executed after the delay
+        activeButton.classList.remove("pressed");
+      }, 200);
+}
+
+// function animateRemove(currentKey){
+//     var activeButton = document.querySelector("." + currentKey);
+//     activeButton.classList.remove("pressed");
+// }
