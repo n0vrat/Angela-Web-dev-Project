@@ -1,30 +1,41 @@
-for (var i = 0; i<document.querySelectorAll(".drum").length; i++){
+// for (var i = 0; i<document.querySelectorAll(".drum").length; i++){
 
 
-document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+// document.querySelectorAll(".drum")[i].addEventListener("click", function(){
     
+//     var buttonInnerHTML = this.innerHTML;
+//     playSound(buttonInnerHTML);
+//     animateButton(buttonInnerHTML);
+//     // setTimeout(() => {
+//     //     // Code to be executed after the delay
+//     //     animateRemove(buttonInnerHTML);
+//     //   }, 100);
+
+
+    
+// });
+
+// }
+
+// document.addEventListener("keydown", function(event){
+//     playSound(event.key);
+//     animateButton(event.key);
+//     // setTimeout(() => {
+//     //     // Code to be executed after the delay
+//     //     animateRemove(event.key);
+//     //   }, 100);
+// })
+
+$(".drum").on("click", function() {
     var buttonInnerHTML = this.innerHTML;
     playSound(buttonInnerHTML);
     animateButton(buttonInnerHTML);
-    // setTimeout(() => {
-    //     // Code to be executed after the delay
-    //     animateRemove(buttonInnerHTML);
-    //   }, 100);
-    
 });
 
-}
-
-document.addEventListener("keydown", function(event){
+$(document).keypress(function(event) {
     playSound(event.key);
     animateButton(event.key);
-    // setTimeout(() => {
-    //     // Code to be executed after the delay
-    //     animateRemove(event.key);
-    //   }, 100);
-    
-})
-
+});
 
 function playSound(key){
     switch (key) {
@@ -70,11 +81,10 @@ function playSound(key){
 }
 
 function animateButton(currentKey){
-    var activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("pressed");
+    $("." + currentKey).addClass("pressed");
     setTimeout(() => {
         // Code to be executed after the delay
-        activeButton.classList.remove("pressed");
+        $("." + currentKey).removeClass("pressed");;
       }, 200);
 }
 
